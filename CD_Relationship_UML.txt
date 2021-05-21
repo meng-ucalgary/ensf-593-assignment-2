@@ -1,0 +1,34 @@
+@startuml
+class KeyboardReader
+{
+	-reader: BufferedReader
+	+KeyboardReader()
+	+getKeyboardInput(): String
+	+getKeyboardInteger(): int
+	+getKeyboardDouble(): double
+	+prompt(s: String): void
+	+display(s: String): void
+	-readKeyboard(): String
+}
+
+class BankCD
+{
+	-principal: double
+	-rate: double
+	-years: double
+	+BankCD(p: double, r: double, y: double)
+	+calcYearly(): double
+	+calcDaily(): double
+}
+
+class BankCDApp
+{
+	+BankCDApp()
+	+run(): void
+	+{static} main(args: String[]): void
+}
+
+
+BankCDApp --> "1" BankCD : bank
+BankCDApp --> "1" KeyboardReader : reader
+@enduml
