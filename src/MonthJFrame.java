@@ -1,52 +1,67 @@
-import javax.swing.*; 
+import javax.swing.*;
 import java.awt.*;
-import java .awt. event .*;
+import java.awt.event.*;
 
-public class MonthJFrame extends JFrame implements ActionListener{
-	
-	private JTextField inputField; 
+/**
+ * Class to provide a GUI interface to get the month of the year as user input
+ * and display the number of days in that month for a non-leap year in the same
+ * window.
+ * 
+ * @author Bhavyai Gupta
+ * @version 1.0
+ * @since May 21, 2021
+ */
+public class MonthJFrame extends JFrame implements ActionListener {
+	private JTextField inputField;
 	private JTextArea display;
 
-	public MonthJFrame(String title)  {
+	/**
+	 * Constructs the GUI interface to interact with the user
+	 * 
+	 * @param title The title to show on the title bar of the windows
+	 */
+	public MonthJFrame(String title) {
 		JLabel prompt = new JLabel("Input a month between 1 and 12 and press return:");
-	
-		inputField = new JTextField(10); 
+
+		inputField = new JTextField(10);
 		inputField.setText("0");
-		inputField.addActionListener( this ); 
-		
-		display = new JTextArea (1 ,30);
-		
+		inputField.addActionListener(this);
+
+		display = new JTextArea(1, 30);
+
 		JPanel panel = new JPanel();
-		panel.setLayout(new GridLayout(0,2));
+		panel.setLayout(new GridLayout(0, 2));
 		panel.add(prompt);
 		panel.add(inputField);
-		
+
 		Container contentPane = getContentPane();
 		contentPane.setLayout(new BorderLayout());
-		
+
 		contentPane.add("Center", panel);
 		contentPane.add("South", display);
-		
+
 		setTitle(title);
-		setSize( 350, 150 );              
+		setSize(350, 150);
 		pack();
 		setVisible(true);
-	
 	}
-	
-	public void actionPerformed(ActionEvent evt)  { 
-		if ( evt.getSource() == inputField) { 
-			//convert user input to an integer
-			int number = Integer.parseInt(inputField.getText()); 
-			
-			//TODO: update display with number chosen and days calculated
-			
+
+	/**
+	 * Catches the events by the ActionListener as a result of user interaction with
+	 * the GUI interface
+	 * 
+	 * @param evt The action caught by the GUI
+	 */
+	public void actionPerformed(ActionEvent evt) {
+		if (evt.getSource() == inputField) {
+			// convert user input to an integer
+			int number = Integer.parseInt(inputField.getText());
+			display.setText("There are " + Days.howManyDays(number) + " days");
 		}
 	}
-	
+
 	public static void main(String[] args) {
-		
-		//Starting the GUI application
+		// Starting the GUI application
 		new MonthJFrame("Days in month");
 
 	}
