@@ -1,0 +1,16 @@
+@startuml
+class JFrame
+interface ActionListener
+
+class MonthJFrame 
+{
+	-inputField: JTextField
+	-display: JTextArea
+	+MonthJFrame(title: String)
+	+actionPerformed(evt: ActionEvent): void
+	+{static} main(args: String[]): void
+}
+
+JFrame <|-- MonthJFrame
+ActionListener <|.. MonthJFrame
+@enduml
