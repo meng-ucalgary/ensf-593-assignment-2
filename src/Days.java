@@ -7,7 +7,9 @@
  * @since May 21, 2021
  */
 public final class Days {
-
+	/**
+	 * Construct declared private to prevent creation of objects
+	 */
 	private Days() {
 	}
 

@@ -12,7 +12,14 @@ import java.awt.event.*;
  * @since May 21, 2021
  */
 public class MonthJFrame extends JFrame implements ActionListener {
+	/**
+	 * The input field to accept the month from the user
+	 */
 	private JTextField inputField;
+
+	/**
+	 * Display area to print the number of days in the month
+	 */
 	private JTextArea display;
 
 	/**
@@ -60,6 +67,11 @@ public class MonthJFrame extends JFrame implements ActionListener {
 		}
 	}
 
+	/**
+	 * Function to create the GUI by calling the constructor MonthJFrame
+	 * 
+	 * @param args not used
+	 */
 	public static void main(String[] args) {
 		// Starting the GUI application
 		new MonthJFrame("Days in month");
