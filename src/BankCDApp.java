@@ -63,12 +63,12 @@ public class BankCDApp {
 		reader.display("");
 
 		reader.display("The maturity value compounded yearly is " + currency.format(this.bank.calcYearly()) + ".");
-		reader.display("The maturity value compounded daily is " + currency.format(this.bank.calcDaily()) + ".");
+		reader.display("The maturity value compounded daily is  " + currency.format(this.bank.calcDaily()) + ".");
 	}
 
 	/**
 	 * Function to call the instance method run()
-	 * 
+	 *
 	 * @param args not used
 	 */
 	public static void main(String[] args) {
