@@ -13,4 +13,7 @@ class MonthJFrame
 
 JFrame <|-- MonthJFrame
 ActionListener <|.. MonthJFrame
+
+MonthJFrame *-- JTextField 
+MonthJFrame *-- JTextArea 
 @enduml

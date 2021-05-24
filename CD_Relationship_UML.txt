@@ -23,12 +23,15 @@ class BankCD
 
 class BankCDApp
 {
+	-reader: KeyboardReader
+	-bank: BankCD
 	+BankCDApp()
 	+run(): void
 	+{static} main(args: String[]): void
 }
 
 
-BankCDApp --> "1" BankCD : bank
-BankCDApp --> "1" KeyboardReader : reader
+BankCDApp *-- BankCD
+BankCDApp *-- KeyboardReader
+KeyboardReader *-- BufferedReader
 @enduml
