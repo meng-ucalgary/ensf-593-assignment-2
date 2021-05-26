@@ -2,18 +2,18 @@
 class JFrame
 interface ActionListener
 
-class MonthJFrame 
+class MonthJFrame
 {
-	-inputField: JTextField
-	-display: JTextArea
-	+MonthJFrame(title: String)
-	+actionPerformed(evt: ActionEvent): void
-	+{static} main(args: String[]): void
+    -inputField: JTextField
+    -display: JTextArea
+    +MonthJFrame(title: String)
+    +actionPerformed(evt: ActionEvent): void
+    +{static} main(args: String[]): void
 }
 
 JFrame <|-- MonthJFrame
 ActionListener <|.. MonthJFrame
 
-MonthJFrame *-- JTextField 
-MonthJFrame *-- JTextArea 
+MonthJFrame *-- JTextField
+MonthJFrame *-- JTextArea
 @enduml

@@ -1,7 +1,7 @@
 @startuml
 class Days
 {
-	-Days()
-	+{static} howManyDays(d: int): int
+    -Days()
+    +{static} howManyDays(d: int): int
 }
 @enduml
